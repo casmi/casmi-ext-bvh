@@ -40,6 +40,6 @@
 	</plugins>
   </build>
   <name>casmi-ext-bvh</name>
-  <url>http://casmi.github.com</url>
+  <url>https://github.com/casmi/casmi-ext-bvh</url>
   <description>casmi extension for bvh</description>
 </project>
