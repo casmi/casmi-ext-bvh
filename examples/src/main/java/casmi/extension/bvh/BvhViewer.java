@@ -44,11 +44,11 @@ public class BvhViewer extends Bvh{
 		int index = 0;
 		for( BvhBone b : parser.getBones())
 	    {
-	      sphereList.get(index).setPosition(640+b.absPos.getX(), 350+b.absPos.getY(), b.absPos.getZ());
+	      sphereList.get(index).setPosition(400+b.absPos.getX(), 300+b.absPos.getY(), b.absPos.getZ());
 	      index++;
 	      if (!b.hasChildren())
 	      {
-	    	  sphereList.get(index).setPosition(640+b.absEndPos.getX(), 350+b.absEndPos.getY(), b.absEndPos.getZ());
+	    	  sphereList.get(index).setPosition(400+b.absEndPos.getX(), 300+b.absEndPos.getY(), b.absEndPos.getZ());
 	  	      index++;
 	      } 
 	    }

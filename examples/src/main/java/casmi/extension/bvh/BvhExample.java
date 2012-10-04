@@ -30,8 +30,6 @@ import casmi.MouseEvent;
 import casmi.graphics.color.ColorSet;
 import casmi.graphics.element.Line;
 import casmi.graphics.element.Sphere;
-import casmi.graphics.object.Camera;
-import casmi.graphics.object.Perspective;
 import casmi.io.Reader;
 import casmi.util.DateUtil;
 
@@ -45,8 +43,6 @@ import casmi.util.DateUtil;
 
 public class BvhExample extends Applet{
 	BvhViewer bvh1,bvh2,bvh3;
-	Perspective perspective;
-	Camera camera;
 	Sphere s = new Sphere(10000);
 	double _cos,_sin;
 	int startMillis;
@@ -55,22 +51,17 @@ public class BvhExample extends Applet{
 	
 	@Override
 	public void setup() {
-		setSize(1280,720);
+		setSize(800,600);
 		setBackGroundColor(0);
 		setFPS(30);
 		loadBvh();
 		_cos = Math.cos(DateUtil.millis() / 5000.f);
 		_sin = Math.sin(DateUtil.millis() / 5000.f);
-		perspective = new Perspective();
-        camera      = new Camera(getWidth()/4.f + getWidth()/4.f * _cos +200, getHeight()/2.0f-100, 550 + 150 * _sin,-getWidth()/2.0f, getHeight()/2.0f, -400, 0, 1, 0);
-        //setPerspective(perspective);
-        setCamera(camera);
-        Line l1,l2;
+		   Line l1,l2;
         l1 = new Line(getWidth()/2.0, getHeight()/2.0, -30.0, getWidth()/2.0, getHeight()/2.0, 30.0);
 		l2 = new Line(getWidth()/2.0-30, getHeight()/2.0, 0, getWidth()/2.0 + 30, getHeight()/2.0, 0);
 		l1.setStrokeColor(ColorSet.WHITE_SMOKE);
 		l2.setStrokeColor(ColorSet.WHITE_SMOKE);
-		//addObject(s);
 		addObject(l1);
 		addObject(l2);
 		addObject(bvh1);
@@ -98,19 +89,17 @@ public class BvhExample extends Applet{
 		if(play==true){
 		_cos = Math.cos(getMillis() / 5000.f);
 		_sin = Math.sin(getMillis() / 5000.f);
-		camera.set(getWidth()/4.f + getWidth()/4.f * _cos +200, getHeight()/2.0f-100, 550 + 150 * _sin,-getWidth()/2.0f, getHeight()/2.0f, -400, 0, 1, 0);
 		bvh1.update( getMillis() );
 		bvh2.update( getMillis() );
 		bvh3.update( getMillis() );
 		}
 	}
 
-	@Override
+   @Override
 	public void mouseEvent(MouseEvent e, MouseButton b) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
+    }
+	   
 	@Override
 	public void keyEvent(KeyEvent e) {
 		if(e == KeyEvent.PRESSED){
