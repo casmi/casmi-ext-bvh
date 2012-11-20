@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>casmi</groupId>
   <artifactId>casmi-ext-bvh</artifactId>
-  <version>0.2.1-SNAPSHOT</version>
+  <version>0.3.0</version>
   <packaging>jar</packaging>
   
   <properties>
@@ -22,7 +22,7 @@
     <dependency>
       <groupId>casmi</groupId>
       <artifactId>casmi</artifactId>
-      <version>0.2.1-SNAPSHOT</version>
+      <version>0.3.0</version>
     </dependency>
   </dependencies>
   
